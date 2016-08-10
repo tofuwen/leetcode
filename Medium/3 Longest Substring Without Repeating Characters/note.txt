@@ -1,0 +1,10 @@
+哈哈哈，自己想出来了一个O(n)的算法！
+
+思路其实就是标答。
+
+
+Idea is that, while we traverse form left to right if we see a character at position j is a duplicate of a character at a position i < j 
+on the left then we know that we can't start the substring from i anymore. So, we need to start a new substring from i+1 position. 
+While doing this we also need to update the length of current substring and start of current substring. 
+Important part of this process is to make sure that we always keep the latest position of the characters we have seen so far. 
+Below is a simple O(n) implementation of this logic.

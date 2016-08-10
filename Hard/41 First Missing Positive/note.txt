@@ -1,0 +1,17 @@
+又是一道不会做的题···
+
+
+In first loop, make all numbers less than 1 and greater than n equal to n+1.
+
+Now in array, we will have value either between 1 and n or n+1. In second loop, if value is equal to n+1 simply continue. If it is between 1 and n, then make value at that index negative.
+
+In third loop, if you get any value positive then return that_index+1 and if no value is positive, return n+1.
+
+
+So brilliant!!
+
+思路就是用数组的index表示某种信息！！！！
+
+所以要求值的范围就是 1 - n, 跟数组个数对应！！
+
+看到老多题目用到这个trick了··· 

@@ -1,0 +1,20 @@
+The main idea is the same with problem Linked List Cycle II,
+https://leetcode.com/problems/linked-list-cycle-ii/. 
+Use two pointers the fast and the slow. The fast one goes forward two steps each time, 
+while the slow one goes only step each time. They must meet the same item when slow==fast. 
+In fact, they meet in a circle, the duplicate number must be the entry point of the circle when visiting the array from nums[0]. 
+Next we just need to find the entry point. 
+We use a point(we can use the fast one before) to visit form begining with one step each time, 
+do the same job to slow. When fast==slow, they meet at the entry point of the circle. The easy understood code is as follows.
+
+这题真的挺难的，我确实不会做···
+
+而且一开始取 0 是有原因的！
+因为数据的range是1到n，而没有0.
+
+如果数据的range是0到n-1，则这个算法就有麻烦了。
+（不对，也行啊！把起点取到n就行了！要保证取的起点不能是个fixed的点！）
+
+这题确实和链表判环是一个题。有0到n这n+1个点，每个点连到num[i]那个点。
+
+区别就是链表那题只有一个节点和自己连也行。但这题不行。

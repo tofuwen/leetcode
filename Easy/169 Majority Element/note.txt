@@ -1,0 +1,38 @@
+这种题不看discuss谁想得到啊···
+
+1. 排序
+2. 牛逼的vote算法
+3. 哈希表 没准也挺快（自己想的···） 但是需要不少空间···
+
+Majority Voting Algorithm - Find the majority element in a list of values
+（Boyer-Moore Majority Vote algorithm）
+
+
+Simple Solution
+Sort the list, if there is a majority value it must now be the middle value. To confirm it's the majority, run another pass through the list and count it's frequency.
+
+The simple solution is O(n lg n) due to the sort though. We can do better!
+
+Boyer-Moore Algorithm
+The Boyer-Moore algorithm is presented in this paper: Boyer-Moore Majority Vote Algorithm. The algorithm uses O(1) extra space and O(N) time. It requires exactly 2 passes over the input list. It's also quite simple to implement, though a little trickier to understand how it works.
+
+In the first pass, we generate a single candidate value which is the majority value if there is a majority. The second pass simply counts the frequency of that value to confirm. The first pass is the interesting part.
+
+In the first pass, we need 2 values: 
+A candidate value, initially set to any value
+A count, initially set to zero.
+For each element in our input list, we first examine the count value. If the count is equal to 0, we set the candidate to the value at the current element. Next, first compare the element's value to the current candidate value. If they are the same, we increment count by 1. If they are different, we decrement count by 1.
+
+In python:
+
+candidate = 0
+count = 0
+for value in input:
+  if count == 0:
+    candidate = value
+  if candidate == value:
+    count +=1
+  else:
+    count -= 1
+
+At the end of all of the inputs, the candidate will be the majority value if a majority value exists. A second O(N) pass can verify that the candidate is the majority element (an exercise left for the reader).

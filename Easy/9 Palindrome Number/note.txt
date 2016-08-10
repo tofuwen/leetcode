@@ -1,0 +1,9 @@
+This problem is meanless
+
+Impossible to solve without extra space. 
+Always need space for constants, variables or whatever. 
+Recursion calls will take space for call stack.
+
+If you are talking about constant space, then even declaring a string / stack will take constant space. 
+(In fact at most (log(10, INT_MAX) * sizeof char), which is no worse than declaring an integer or more). 
+Actually, even recursion will take constant space.

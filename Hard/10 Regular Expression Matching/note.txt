@@ -1,0 +1,15 @@
+facebook面试原题···
+
+My algorithm created in the interview did work!!
+After some optimization, I got AC!
+
+But there is a way better DP solution.
+
+Just to build a DP table checked, where checked[i][j] indicates whether s[0..i-1] matches with p[0..j-1]. The recursive relationship is as below: To match with the empty string s[0..0] (i.e. to make checked[0][j]), P[0..j-1] has to meet: p[j-1]=='*' (to cancel p[j-2]) and checked[0][j-2] == true; To match with the string s[0..i-1] (i.e. to make checked[i][j]), P[0..j-1] has to meet:
+
+if p[j-1] =='*', then j must be larger than 1 (j>1) and
+1. checked[i][j-2] (i.e. p[j-2] cancelled by '*')
+2. checked[i-1][j] && (s[i-1] ==p[j-2] || p[j-2] =='.') (s[i-1] matches with p[j-2] or '.', )
+//这个解释有些问题。"dhsihshi" matchs ".*" 不过代码是对的···直接看代码吧
+
+if p[j-1] !='*', checked[i-1][j-1] && (s[i-1] ==p[j-1] || p[j-1] =='.')(i.e. s[i-1] matches with p[j-1] or '.')
